@@ -1,0 +1,147 @@
+<div class="container">
+  <!-- Motoristas -->
+  <div class="section">
+    <div class="header">
+      <h3>Entregas por Motorista</h3>
+      <button
+        mat-button
+        (click)="toggleView('motoristas')"
+        matTooltip="Alternar entre Tabela e Gráfico"
+        matTooltipPosition="above"
+      >
+        <mat-icon>{{
+          viewMode["motoristas"] === "chart" ? "bar_chart" : "table_chart"
+        }}</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="viewMode['motoristas'] === 'table'">
+      <table
+        mat-table
+        [dataSource]="motoristasEntregas"
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalEntregas">
+          <th mat-header-cell *matHeaderCellDef>Total de Entregas</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.totalEntregas }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="entregasRealizadas">
+          <th mat-header-cell *matHeaderCellDef>Entregas Realizadas</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.entregasRealizadas }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsMotoristas"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumnsMotoristas"
+        ></tr>
+      </table>
+    </div>
+
+    <div *ngIf="viewMode['motoristas'] === 'chart'" class="chart-container">
+      <canvas baseChart [data]="motoristasChartData" [type]="'bar'"> </canvas>
+    </div>
+  </div>
+
+  <!-- Insucesso por Motorista -->
+  <div class="section">
+    <div class="header">
+      <h3>Insucesso por Motorista</h3>
+      <button
+        mat-button
+        (click)="toggleView('insucessos')"
+        matTooltip="Alternar entre Tabela e Gráfico"
+        matTooltipPosition="above"
+      >
+        <mat-icon>{{
+          viewMode["insucessos"] === "chart" ? "bar_chart" : "table_chart"
+        }}</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="viewMode['insucessos'] === 'table'">
+      <table
+        mat-table
+        [dataSource]="motoristasInsucesso"
+        class="mat-elevation-z8"
+      >
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="entregasInsucesso">
+          <th mat-header-cell *matHeaderCellDef>Entregas com Insucesso</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.entregasInsucesso }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsInsucesso"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumnsInsucesso"
+        ></tr>
+      </table>
+    </div>
+    <div *ngIf="viewMode['insucessos'] === 'chart'" class="chart-container">
+      <canvas baseChart [data]="insucessosChartData" [type]="'bar'"> </canvas>
+    </div>
+  </div>
+
+  <!-- Entregas por Bairro -->
+  <div class="section">
+    <div class="header">
+      <h3>Entregas por Bairro</h3>
+      <button
+        mat-button
+        (click)="toggleView('bairros')"
+        matTooltip="Alternar entre Tabela e Gráfico"
+        matTooltipPosition="above"
+      >
+        <mat-icon>{{
+          viewMode["bairros"] === "chart" ? "bar_chart" : "table_chart"
+        }}</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="viewMode['bairros'] === 'table'">
+      <table mat-table [dataSource]="bairrosEntregas" class="mat-elevation-z8">
+        <ng-container matColumnDef="bairro">
+          <th mat-header-cell *matHeaderCellDef>Bairro</th>
+          <td mat-cell *matCellDef="let element">{{ element.bairro }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalEntregas">
+          <th mat-header-cell *matHeaderCellDef>Total de Entregas</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.totalEntregas }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="entregasRealizadas">
+          <th mat-header-cell *matHeaderCellDef>Entregas Realizadas</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.entregasRealizadas }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsBairros"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsBairros"></tr>
+      </table>
+    </div>
+    <div *ngIf="viewMode['bairros'] === 'chart'" class="chart-container">
+      <canvas baseChart [data]="bairrosChartData" [type]="'pie'"> </canvas>
+    </div>
+  </div>
+</div>

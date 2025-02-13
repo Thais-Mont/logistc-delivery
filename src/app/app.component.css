@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  align-items: center;
+  background-color: #013070;
+  padding: 10px;
+  gap: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.logo {
+  height: 60px;
+}

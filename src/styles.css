@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #013070;
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --light-text-color: #ecf0f1;
+  --hover-color: #2980b9;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #013070;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+.container {
+  padding: 20px;
+}
+
+.main-content {
+  margin-top: 20px;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #4270af !important;
+  color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.no-data-message {
+  text-align: center;
+  font-weight: bold;
+  color: #777;
+  padding: 20px;
+}
+
+mat-paginator {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

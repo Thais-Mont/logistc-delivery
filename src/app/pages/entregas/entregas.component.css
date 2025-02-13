@@ -1,0 +1,63 @@
+.filtros-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.filtro label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.filtro input,
+.filtro select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+table.mat-table {
+  width: 100%;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.status-pendente {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.status-transito {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.status-entregue {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-insucesso {
+  background-color: #dc3545;
+  color: white;
+}

@@ -1,27 +1,58 @@
-# LogisticDashboard
+# Logística com Gerenciamento de Transporte
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Este projeto consiste no desenvolvimento de uma interface para possibilitar o acompanhamento das entregas de uma transportadora.
 
-## Development server
+## Tecnologias Utilizadas
+- **Framework**: Angular (versão 16 ou superior)
+- **Linguagem**: TypeScript
+- **Gerenciamento de Estado**: RxJS e/ou NgRx
+- **UI Library**: Angular Material
+- **Backend Simulado**: json-server
+- **Testes**: Jasmine & Karma
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
+### Dashboard
+- Exibir o andamento das entregas por motorista
+- Exibir entregas malsucedidas por motorista
+- Exibir andamento das entregas por bairro
 
-## Code scaffolding
+### Lista de Entregas
+- Paginação de 10 em 10 registros
+- Filtros por motorista e status
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requisitos do Sistema
+1. Implementar boas práticas de desenvolvimento (Clean Code, SOLID, DRY)
+2. Utilizar roteamento para navegação entre as views
+3. Incluir testes unitários
 
-## Build
+## Instalação e Execução do Projeto
+```sh
+# Clonar o repositório
+git clone https://github.com/Thais-Mont/logistc-delivery.git 
+cd logistic-dashboard
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Instalar dependências
+npm install
 
-## Running unit tests
+# Iniciar o servidor de desenvolvimento e a API simulada
+npm start
+```
+A aplicação será executada em `http://localhost:4200`, enquanto o json-server rodará em `http://localhost:3000`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Scripts Disponíveis
+```sh
+# Iniciar a aplicação e o json-server
+npm start
 
-## Running end-to-end tests
+## Testes
+Para rodar os testes unitários, utilize o seguinte comando:
+```sh
+npm run test
+```
+Os testes são executados com Jasmine e Karma, garantindo a qualidade do código.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Licença
+Este projeto está sob a licença MIT.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
